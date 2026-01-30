@@ -12,7 +12,7 @@ fi
 echo "Compiling for WebAssembly..."
 
 # Create a build directory
-mkdir -p web_build
+mkdir -p docs
 
 # Compile
 # -O3: Optimization level (make it run fast)
@@ -21,9 +21,9 @@ mkdir -p web_build
 # -s USE_SDL_MIXER=2: Use SDL2 Mixer port
 # -s ALLOW_MEMORY_GROWTH=1: Allow game to use more RAM if needed
 # --preload-file sounds: Pack the sounds folder into the game
-# -o web_build/index.html: Output file
+# -o docs/index.html: Output file
 
-emcc main.cpp -o web_build/index.html \
+emcc main.cpp -o docs/index.html \
     -O3 \
     -s LEGACY_GL_EMULATION=1 \
     -s USE_SDL=2 \
@@ -33,5 +33,5 @@ emcc main.cpp -o web_build/index.html \
     --preload-file sounds \
     --shell-file shell_minimal.html
 
-echo "Build complete! Go to the 'web_build' folder and run a server."
+echo "Build complete! Go to the 'docs' folder and run a server."
 
