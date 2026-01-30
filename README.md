@@ -21,9 +21,11 @@ A fast-paced tower defense game where you protect your server from incoming zomb
 - 🏪 In-game shop for purchasing upgrades
 - 📈 Progressive difficulty with faster and tougher zombies
 
-### 2. Stick Man Animation (Root)
-A simple animation demo featuring a stickman character that moves around the screen in a defined pattern.
-
+### 2. Soldier Man Animation (Root)
+A simple animation demo featuring a Soldier character that moves around the screen in a defined pattern.
+![]("./imgs/startScreen.png")
+![]("./imgs/shootingNromalView.png")
+![]("./imgs/freezEffect.png")
 ### 3. Eve Character Transformations (transformation/)
 An interactive demo showcasing geometric transformations (rotation, scaling, translation) applied to a character drawn using geometric primitives.
 
