@@ -68,44 +68,14 @@ brew install freeglut
 
 ### Zombie Shooter (Main Game)
 ```bash
-cd FinalProject
-g++ -o zombie_shooter main.cpp -lGL -lGLU -lglut -lm
+g++ -o zombie_shooter main.cpp -lGL -lGLU -lglut -lSDL2 -lSDL2_mixer -lm
 ```
 
-### Stick Man Animation
-```bash
-g++ -o stickman stick_man.cpp -lGL -lGLU -lglut -lm
-```
-
-### Transformation Demo
-```bash
-cd transformation
-g++ -o transformation main.cpp -lGL -lGLU -lglut -lm
-```
-
-## 🚀 Running the Games
+## 🚀 Running the Game
 
 ### Zombie Shooter
 ```bash
-cd FinalProject
 ./zombie_shooter
-# or
-./main
-```
-
-### Stick Man Animation
-```bash
-./stickman
-# or
-./main
-```
-
-### Transformation Demo
-```bash
-cd transformation
-./transformation
-# or
-./main
 ```
 
 ## 🎮 Game Controls
@@ -134,16 +104,11 @@ cd transformation
 
 ```
 openGL_Game/
-├── FinalProject/           # Main Zombie Shooter game
-│   ├── main.cpp           # Game source code
-│   ├── danila_CHAR.cpp    # Character definitions
-│   └── main               # Compiled executable
-├── transformation/         # Transformation demo
-│   ├── main.cpp           # Demo source code
-│   └── main               # Compiled executable
-├── stick_man.cpp          # Stickman animation source
-├── main.cpp               # Entry point for stickman
-├── main                   # Compiled stickman executable
+├── main.cpp               # Zombie Shooter source code
+├── danila_CHAR.cpp        # Character definitions
+├── sounds/                # WAV sound effects
+├── imgs/                  # Screenshots
+├── zombie_shooter         # Compiled executable
 └── README.md              # This file
 ```
 
