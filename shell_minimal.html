@@ -18,7 +18,9 @@
       var statusElement = document.getElementById('status');
       var Module = {
         preRun: [],
-        postRun: [],
+        postRun: [function() {
+          Module.setStatus('');
+        }],
         print: (function() {
           return function(text) {
             if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
@@ -51,7 +53,7 @@
         totalDependencies: 0,
         monitorRunDependencies: function(left) {
           this.totalDependencies = Math.max(this.totalDependencies, left);
-          Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+          Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : '');
         }
       };
       Module.setStatus('Downloading...');
