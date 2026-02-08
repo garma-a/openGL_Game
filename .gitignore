@@ -5,6 +5,9 @@ zombie_shooter
 # Emscripten SDK
 emsdk/
 
+# CodeQL
+_codeql_detected_source_root
+
 # OS files
 .DS_Store
 Thumbs.db
