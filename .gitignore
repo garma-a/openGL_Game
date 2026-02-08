@@ -1,0 +1,10 @@
+# Compiled binaries
+zombie_shooter
+*.o
+
+# Emscripten SDK
+emsdk/
+
+# OS files
+.DS_Store
+Thumbs.db
