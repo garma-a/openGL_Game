@@ -1758,12 +1758,8 @@ void initSound() {
     return;
   }
 
-  // Load sound effects
-#ifdef __EMSCRIPTEN__
+  // Load sound effects (shoot.wav has no mp3 version, use wav on all platforms)
   shootSound = Mix_LoadWAV("sounds/shoot.wav");
-#else
-  shootSound = Mix_LoadWAV("sounds/shoot.wav");
-#endif
   if (!shootSound) {
     printf("Warning: Could not load shoot sound: %s\n", Mix_GetError());
   } else {

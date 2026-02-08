@@ -16,7 +16,7 @@ mkdir -p docs
 
 # Create a temporary directory with only the needed sound files for the web build.
 # Use mp3 where available (much smaller than wav) to reduce download size.
-SOUNDS_WEB=$(mktemp -d)
+SOUNDS_WEB=$(mktemp -d) || { echo "Error: Failed to create temporary directory"; exit 1; }
 mkdir -p "$SOUNDS_WEB/sounds"
 cp sounds/background_sound_track.mp3 "$SOUNDS_WEB/sounds/"
 cp sounds/freeze.mp3 "$SOUNDS_WEB/sounds/"
