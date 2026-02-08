@@ -1758,38 +1758,58 @@ void initSound() {
     return;
   }
 
-  // Load sound effects
+  // Load sound effects (shoot.wav has no mp3 version, use wav on all platforms)
   shootSound = Mix_LoadWAV("sounds/shoot.wav");
   if (!shootSound) {
-    printf("Warning: Could not load shoot.wav: %s\n", Mix_GetError());
+    printf("Warning: Could not load shoot sound: %s\n", Mix_GetError());
   } else {
     Mix_VolumeChunk(shootSound, 24); // Set to 24 (20% higher than 20)
   }
 
+#ifdef __EMSCRIPTEN__
+  zombieDeathSound = Mix_LoadWAV("sounds/zombie_death.mp3");
+#else
   zombieDeathSound = Mix_LoadWAV("sounds/zombie_death.wav");
+#endif
   if (!zombieDeathSound) {
-    printf("Warning: Could not load zombie_death.wav: %s\n", Mix_GetError());
+    printf("Warning: Could not load zombie_death sound: %s\n", Mix_GetError());
   }
 
+#ifdef __EMSCRIPTEN__
+  pickupSound = Mix_LoadWAV("sounds/pickup.mp3");
+#else
   pickupSound = Mix_LoadWAV("sounds/pickup.wav");
+#endif
   if (!pickupSound) {
-    printf("Warning: Could not load pickup.wav: %s\n", Mix_GetError());
+    printf("Warning: Could not load pickup sound: %s\n", Mix_GetError());
   }
 
+#ifdef __EMSCRIPTEN__
+  freezeSound = Mix_LoadWAV("sounds/freeze.mp3");
+#else
   freezeSound = Mix_LoadWAV("sounds/freeze.wav");
+#endif
   if (!freezeSound) {
-    printf("Warning: Could not load freeze.wav: %s\n", Mix_GetError());
+    printf("Warning: Could not load freeze sound: %s\n", Mix_GetError());
   }
 
+#ifdef __EMSCRIPTEN__
+  levelUpSound = Mix_LoadWAV("sounds/level_up.mp3");
+#else
   levelUpSound = Mix_LoadWAV("sounds/level_up.wav");
+#endif
   if (!levelUpSound) {
-    printf("Warning: Could not load level_up.wav: %s\n", Mix_GetError());
+    printf("Warning: Could not load level_up sound: %s\n", Mix_GetError());
   }
 
   // Load background music
+#ifdef __EMSCRIPTEN__
+  backgroundMusic = Mix_LoadMUS("sounds/background_sound_track.mp3");
+#else
   backgroundMusic = Mix_LoadMUS("sounds/background_sound_track.wav");
+#endif
   if (!backgroundMusic) {
-    printf("Warning: Could not load background_sound_track.wav: %s\n",
+    printf("Warning: Could not load background music: %s\n",
            Mix_GetError());
   }
 

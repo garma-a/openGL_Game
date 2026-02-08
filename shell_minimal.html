@@ -63,6 +63,10 @@
           if (text) Module.printErr('[post-exception status] ' + text);
         };
       };
+      window.addEventListener('unhandledrejection', function(event) {
+        Module.setStatus('Error: ' + event.reason);
+        console.error('Unhandled rejection:', event.reason);
+      });
     </script>
     {{{ SCRIPT }}}
   </body>
